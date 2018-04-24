@@ -7,8 +7,9 @@ class Layout extends React.Component{
   render(){
     return(
       <div id="wrapper">
-        <TopNav/>
-        <SideNav/>
+        {/* <TopNav/>
+        <SideNav/> */}
+        1232
         {this.props.children}
       </div>
     )
