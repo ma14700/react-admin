@@ -1,11 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
+import PageTitle from '../../component/page-title'; 
 import './index.scss'
 
 class Home extends React.Component{
   render(){
     return(
-      <div>
-        <button className="btn btn-default">test</button>
+      <div id="page-wrapper">
+          <PageTitle title="首页"/>
       </div>
     )
   }

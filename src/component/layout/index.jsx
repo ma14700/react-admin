@@ -1,5 +1,11 @@
 import React from 'react';
 
+import NavTop from '../nav-top';
+import NavSide from '../nav-side';
+
+import './index.scss';
+import './theme.css';
+
 class Layout extends React.Component{
   constructor(props){
     super(props)
@@ -7,13 +13,12 @@ class Layout extends React.Component{
   render(){
     return(
       <div id="wrapper">
-        {/* <TopNav/>
-        <SideNav/> */}
-        1232
+        <NavTop/>
+        <NavSide/>
         {this.props.children}
       </div>
     )
   }
 }
 
-export default Layout
+export default Layout;
