@@ -1,12 +1,25 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MUtil from '../../util/mm';
+import User from '../../service/user-service'
+
+const _mm = new MUtil();
+const _user = new User();
 
 class NavTop extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            
+            username:_mm.getStorage('userInfo').username || ''
         }
+    }
+    onLogout(){
+        _user.logout().then(res=>{
+            _mm.removeStorage('userInfo');
+            window.location.href = '/login';
+        },errMsg=>{
+            _mm.errorTips(errMsg);
+        })
     }
     render(){
         return(

@@ -6,25 +6,46 @@ import Layout from './component/layout'
 
 import Home from './page/home/index'
 import Login from './page/login/index';
+import UserList from './page/user/index'
+import ErrorPage from './page/error/index';
+
 
 class App extends React.Component{
     render(){
+        // return(
+        //     <Router>
+        //         <Switch>
+        //             <Route path="/login" component={Login} />
+        //             <Route path="/" render={props=>(
+        //                 <Layout>
+        //                     <Switch>
+        //                         <Route exact path="/" component={Home} />
+        //                         <Redirect from="*" to='/' />
+        //                     </Switch>
+        //                 </Layout>
+        //             )} />
+                  
+        //         </Switch>
+        //     </Router>
+        // );
+        let LayoutRouter = (
+            <Layout>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/product" component={Home}/>
+                    <Route path="/user" component={UserList}/>
+                    <Route component={ErrorPage}/>
+                </Switch>
+            </Layout>  
+        );
         return(
             <Router>
                 <Switch>
-                    <Route path="/login" component={Login} />
-                    <Route path="/" render={props=>(
-                        <Layout>
-                            <Switch>
-                                <Route exact path="/" component={Home} />
-                                <Redirect from="*" to='/' />
-                            </Switch>
-                        </Layout>
-                    )} />
-                  
+                    <Route path="/login" component={Login}/>
+                    <Route path="/" render={ props => LayoutRouter}/>
                 </Switch>
             </Router>
-        );
+        )
     }
 }
 ReactDOM.render(
