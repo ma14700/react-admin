@@ -80,7 +80,12 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy,
+    proxy:{
+      '/manage':{
+        target:'http://admintest.happymmall.com',
+        changeOrigin:true, //
+      }
+    },
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());
