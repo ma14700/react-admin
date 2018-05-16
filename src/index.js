@@ -9,6 +9,8 @@ import Login from './page/login/index';
 import UserList from './page/user/index'
 import ErrorPage from './page/error/index';
 
+import ProductRouter from './page/product/router';
+
 
 class App extends React.Component{
     render(){
@@ -32,7 +34,7 @@ class App extends React.Component{
             <Layout>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/product" component={Home}/>
+                    <Route path="/product" component={ProductRouter}/>
                     <Route path="/user" component={UserList}/>
                     <Route component={ErrorPage}/>
                 </Switch>

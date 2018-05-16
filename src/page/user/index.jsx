@@ -4,8 +4,8 @@ import MUtil        from '../../util/mm'
 import User         from '../../service/user-service.jsx'
 
 import PageTitle    from '../../component/page-title/index';
-// import TableList    from 'util/table-list/index.jsx';
-// import Pagination   from 'util/pagination/index.jsx';
+import TableList    from '../../util/table-list/index';
+import Pagination   from '../../util/pagination/index.jsx';
 
 const _mm   = new MUtil();
 const _user = new User();
@@ -53,12 +53,12 @@ class UserList extends React.Component{
         return(
             <div id="page-wrapper">
                 <PageTitle title="用户列表"/>
-                {/* <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
+                <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
                     {listBody}
                 </TableList>
                 <Pagination current={this.state.pageNum} 
                     total={this.state.total} 
-                    onChange={(pageNum) => this.onPageNumChange(pageNum)}/> */}
+                    onChange={(pageNum) => this.onPageNumChange(pageNum)}/>
             </div>
         )
   
