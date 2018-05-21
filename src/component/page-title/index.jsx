@@ -8,6 +8,7 @@ class PageTitle extends React.Component{
         document.title = `${this.props.title}-HAPPY MMALL`;
     }
     render(){
+        console.log(this.props.children,123);
         return (
             <div className="row">
                 <div className="col-md-12">

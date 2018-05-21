@@ -33,7 +33,6 @@ class TableList extends React.Component{
         );
         // 列表内容
         let listBody = this.props.children;
-        console.log(this.props.children)
         // 列表的信息
         let listInfo = (
             <tr>
